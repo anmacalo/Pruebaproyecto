@@ -1,0 +1,32 @@
+using System.Collections.Generic;
+using ProyectoCiclo3.App.Dominio;
+using System.Linq;
+using System;
+ 
+namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
+{
+    public class RepositorioUsuario
+    {
+        List<Usuario> usuario;
+ 
+    public RepositorioUsuario()
+        {
+            usuario= new List<Usuario>()
+            {
+                new Usuario{Id=1,Nombre="Juan Pablo ",Apellido= "Cano",Direccion= "trv 34 f ",Telefono= 300345678},
+                new Usuario{Id=2,Nombre="Elena Gisel",Apellido= "Gomez",Direccion= " cll 30 cll 60",Telefono= 345987654},
+                new Usuario{Id=3,Nombre="Frida Maria",Apellido= "Kahlo",Direccion= "Cra 50 c ",Telefono= 34567890}
+ 
+            };
+        }
+ 
+        public IEnumerable<Usuario> GetAll()
+        {
+            return usuario;
+        }
+ 
+        public Usuario GetBusWithId(int id){
+            return usuario.SingleOrDefault(b => b.id == id);
+        }
+    }
+}
