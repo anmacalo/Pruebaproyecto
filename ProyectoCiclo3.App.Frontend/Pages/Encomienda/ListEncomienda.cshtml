@@ -1,34 +1,27 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListEncomiendaModel
 @{
 }
  
-<table class="table table-hover">
-  <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Id</th>
-      <th scope="col">Descripsion</th>
-      <th scope="col">Peso</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
+<h1>Listado de Encomiendas</h1>
+<table class="table">
+    <thead>
+        <th>Id</th>
+        <th>Descripsion</th>
+        <th>Peso</th>
+    </thead>
+    @foreach (var encomienda in Model.Encomienda)
+    {
+        <tr>
+            <td>@encomienda.Id</td>
+            <td>@encomienda.Descripsion</td>
+            <td>@encomienda.Peso</td>
+   
+            <td>
+              <a class="btn btn-info" asp-page="./Details" asp-route-encomiendaId="@encomienda.Id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-encomiendaId="@encomienda.Id">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a>
+              </td>
+        </tr>
+    }
 </table>

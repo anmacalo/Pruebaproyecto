@@ -13,11 +13,11 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         {
             servicio= new List<Servicio>()
             {
-                new Servicio{Id=1,Origen=2,Destino= 2020,Fecha= 100000,Hora= 4,Encomienda= 34},
-                new Servicio{Id=2,Origen=3,Destino= 2021,Fecha= 90000,Hora= 16,Encomienda= 56},
-                new Servicio{Id=3,Origen=5,Destino= 2000,Fecha= 150000,Hora= 24,Encomienda= 93}
- 
-            };
+                new Servicio{Id=1,Origen=2,Destino= 3,Fecha= "15/08/2012",Hora= "14:00",Encomienda= 2014},
+                new Servicio{Id=2,Origen=3,Destino= 4,Fecha= "11/08/2020",Hora= "11:00",Encomienda= 2004}
+                };
+                
+                
         }
  
         public IEnumerable<Servicio> GetAll()
@@ -25,8 +25,8 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return servicio;
         }
  
-        public Servicio GetBusWithId(int id){
-            return servicio.SingleOrDefault(b => b.id == id);
+        public Servicio GetBusWithId(int Id){
+            return servicio.SingleOrDefault(b => b.Id == Id);
         }
     }
 }

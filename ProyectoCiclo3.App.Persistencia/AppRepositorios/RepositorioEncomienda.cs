@@ -13,9 +13,9 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         {
             encomienda= new List<Encomienda>()
             {
-                new Encomienda{Id=1,Descripsion="Caja",Peso= 20},
+                new Encomienda{Id=1,Descripsion="Caja",Peso= 15},
                 new Encomienda{Id=2,Descripsion="Sobre",Peso= 1},
-                new Encomienda{Id=3,Descripsion="Documentos",Peso= 2}
+                new Encomienda{Id=3,Descripsion="Documentos",Peso= 12}
  
             };
         }
@@ -25,8 +25,8 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return encomienda;
         }
  
-        public Encomienda GetBusWithId(int id){
-            return encomienda.SingleOrDefault(b => b.id == id);
+        public Encomienda GetBusWithId(int Id){
+            return encomienda.SingleOrDefault(b => b.Id == Id);
         }
     }
 }

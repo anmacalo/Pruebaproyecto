@@ -13,11 +13,10 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
         {
             usuario= new List<Usuario>()
             {
-                new Usuario{Id=1,Nombre="Juan Pablo ",Apellido= "Cano",Direccion= "trv 34 f ",Telefono= 300345678},
-                new Usuario{Id=2,Nombre="Elena Gisel",Apellido= "Gomez",Direccion= " cll 30 cll 60",Telefono= 345987654},
-                new Usuario{Id=3,Nombre="Frida Maria",Apellido= "Kahlo",Direccion= "Cra 50 c ",Telefono= 34567890}
- 
+                new Usuario{Id=1,Nombre="Audi",Apellido= "Restrepo",Direccion= "Cll 40 b 56",Telefono= 2770135},
+                new Usuario{Id=2,Nombre="Karoll",Apellido= "Goez",Direccion= "Cll 40 b 56",Telefono= 2770135}
             };
+                
         }
  
         public IEnumerable<Usuario> GetAll()
@@ -25,8 +24,8 @@ namespace ProyectoCiclo3.App.Persistencia.AppRepositorios
             return usuario;
         }
  
-        public Usuario GetBusWithId(int id){
-            return usuario.SingleOrDefault(b => b.id == id);
+        public Usuario GetBusWithId(int Id){
+            return usuario.SingleOrDefault(b => b.Id == Id);
         }
     }
 }

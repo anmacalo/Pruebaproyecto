@@ -4,7 +4,7 @@ namespace ProyectoCiclo3.App.Dominio{
         public int Id{get;set;}
         public int Origen{get; set;}
         public int Destino{get; set;}
-        public Date Fecha { get; set;}
+        public string Fecha { get; set;}
         public string Hora { get; set;}
         public int Encomienda {get; set;}
     }

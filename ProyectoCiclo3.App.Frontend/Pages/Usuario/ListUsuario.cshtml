@@ -1,42 +1,36 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListBusModel
 @{
 }
+
+<h1>Lista de Usuarios</h1>
  
 <table class="table table-hover">
   <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Apellido</th>
-      <th scope="col">Direccion</th>
-      <th scope="col">Telefono</th>
-    </tr>
+  
+      <th>#</th>
+      <th>Id</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Direccion</th>
+      <th>Telefono</th>
+    
   </thead>
-  <tbody>
+  @foreach (var bus in Model.Buses)
+  {
     <tr>
-      <th scope="row">1</th>
-      <td>12345</td>
-      <td>Otto</td>
-      <td>Serge</td>
-      <td>Cra 30 50</td>
-      <td>2304040</td>
+    <td>@usuario.Id</td>
+    <td>@usuario.Nombre</td>
+    <td>@usuario.Apellido</td>
+    <td>@usuario.Direccion</td>
+    <td>@usuario.Telefono</td>
+    
+    <td>
+    <a class="btn btn-info" asp-page="./Details" asp-route-servicioId="@servicio.Id"><i class="fas fa-adjust"></i>Ver</a>
+    <a class="btn btn-info" asp-page="./Edit" asp-route-servicioId="@servicio.Id">Editar</a>
+    <a class="btn btn-danger" href="">Eliminar</a>
+    </td>
     </tr>
-    <tr>
-      <th scope="row">2</th>
-      <td>67890</td>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>cra 20 cll 15</td>
-      <td>3404040</td>
-    </tr>
-    <tr>
-      <th scope="row">3</th>
-      <td>98765</td>
-      <td>Larry</td>
-      <td>Arias</td>
-      <td>cra 49 09</td>
-      <td>876543</td>
-    </tr>
-  </tbody>
+  }
+
 </table>

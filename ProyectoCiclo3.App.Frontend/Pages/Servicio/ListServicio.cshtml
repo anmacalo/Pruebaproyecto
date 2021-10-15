@@ -1,46 +1,36 @@
 @page
+@model ProyectoCiclo3.App.Frontend.Pages.ListBusModel
 @{
 }
- 
+ <h1>Lista de Servicios</h1>
 <table class="table table-hover">
   <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Id</th>
-      <th scope="col">Origen</th>
-      <th scope="col">Destino</th>
-      <th scope="col">Fecha</th>
-      <th scope="col">Hora</th>
-      <th scope="col">Encomienda</th>
+    
+      <th>#</th>
+      <th>Id</th>
+      <th>Origen</th>
+      <th>Destino</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Encomienda</th>
+  
+    </thead>
+    @foreach (var servicio in Model.Servicio)
+    {
+     <tr>
+      <td>@servicio.Id</td>
+      <td>@servicio.Origen</td>
+      <td>@servicio.Destino</td>
+      <td>@servicio.Fecha</td>
+      <td>@servicio.Hora</td>
+      <td>@servicio.Encomienda</td>
+      <td>
+        <a class="btn btn-info" asp-page="./Details" asp-route-servicioId="@servicio.Id"><i class="fas fa-adjust"></i>Ver</a>
+              <a class="btn btn-info" asp-page="./Edit" asp-route-servicioId="@servicio.Id">Editar</a>
+              <a class="btn btn-danger" href="">Eliminar</a>
+
+      </td>
     </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <th scope="row">1</th>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-  </tbody>
+    }
+
 </table>
